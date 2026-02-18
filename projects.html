@@ -1,83 +1,121 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects — Sherwin</title>
-
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>پروژه‌ها | جزئیات و گالری</title>
   <link rel="stylesheet" href="assets/css/projects.css" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
-<body data-theme="dark">
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-  <header class="topbar container">
-    <div class="brand">
-      <i class="ri-sparkling-2-line"></i>
-      پروژه‌ها
-    </div>
+  <header class="header mini">
     <nav class="nav">
-      <a href="index.html">خانه</a>
-      <a href="#projects">همه پروژه‌ها</a>
-      <button class="btn small" id="theme-toggle">تغییر تم</button>
+      <div class="brand">
+        <div class="logo">M</div>
+        <div class="brand-text">
+          <span data-i18n="brand_name">مهندس مکاترونیک</span>
+          <small data-i18n="brand_tag">پژوهشگر دیپ‌لرنینگ</small>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <a href="index.html" class="btn ghost">
+          <i class="ri-arrow-right-line"></i>
+          <span data-i18n="back_home">بازگشت</span>
+        </a>
+        <button class="btn ghost" id="langToggle">
+          <i class="ri-translate-2"></i>
+          <span data-i18n="lang_btn">EN</span>
+        </button>
+        <button class="btn ghost" id="themeToggle">
+          <i class="ri-moon-clear-line"></i>
+          <span data-i18n="theme_btn">تاریک</span>
+        </button>
+      </div>
     </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1 data-i18n="projects_page_title">گالری پروژه‌ها و جزئیات فنی</h1>
+        <p data-i18n="projects_page_desc">
+          در این صفحه می‌توانید تصاویر، ویدیوها و توضیحات کامل پروژه‌ها را مشاهده کنید.
+        </p>
+      </div>
+    </section>
   </header>
 
-  <main class="container" id="projects">
-    <section class="projects-hero">
-      <h1>نمایش حرفه‌ای پروژه‌ها</h1>
-      <p class="muted">هر پروژه شامل گالری تصاویر، توضیحات، تکنولوژی‌ها و لینک‌ها است.</p>
+  <main class="main">
+    <section class="section project-detail">
+      <div class="detail-grid">
+        <div class="detail-media">
+          <div class="media-grid">
+            <div class="media-card img1"></div>
+            <div class="media-card img2"></div>
+            <div class="media-card img3"></div>
+          </div>
+          <video class="project-video" controls poster="assets/img/project-poster.jpg">
+            <source src="assets/videos/project-demo.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div class="detail-info">
+          <h2 data-i18n="proj_detail_title">بازوی رباتیک هوشمند</h2>
+          <p data-i18n="proj_detail_desc">
+            این پروژه با ترکیب کنترل تطبیقی، بینایی ماشین و شبکه‌های عصبی عمیق توسعه داده شده است.
+            هدف، دستیابی به دقت بالا و پایداری در محیط‌های صنعتی بوده است.
+          </p>
+
+          <ul class="tags">
+            <li><i class="ri-cpu-line"></i> Robotics</li>
+            <li><i class="ri-brain-line"></i> Deep Learning</li>
+            <li><i class="ri-eye-2-line"></i> Vision</li>
+          </ul>
+
+          <a class="btn primary" href="assets/files/CV.pdf" download>
+            <i class="ri-download-cloud-2-line"></i>
+            <span data-i18n="cta_cv">دانلود رزومه</span>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <section class="projects-grid">
-      <!-- Project Card -->
-      <article class="project-card">
-        <div class="slider" data-slider>
-          <img src="img/project-1.jpg" alt="project" class="active" />
-          <img src="img/project-1b.jpg" alt="project" />
-          <img src="img/project-1c.jpg" alt="project" />
-          <button class="nav prev"><i class="ri-arrow-right-s-line"></i></button>
-          <button class="nav next"><i class="ri-arrow-left-s-line"></i></button>
-        </div>
-        <div class="content">
-          <h3>پلتفرم آموزشی هوشمند</h3>
-          <p class="muted">طراحی کامل UI/UX و پیاده‌سازی فرانت‌اند با تمرکز بر نرخ تبدیل.</p>
-          <div class="tags">
-            <span>UI/UX</span><span>React</span><span>Design System</span>
-          </div>
-          <div class="links">
-            <a href="#"><i class="ri-global-line"></i> لایو</a>
-            <a href="#"><i class="ri-github-line"></i> سورس</a>
-          </div>
-        </div>
-      </article>
+    <section class="section project-list">
+      <div class="section-title">
+        <h2 data-i18n="other_projects_title">سایر پروژه‌ها</h2>
+        <p data-i18n="other_projects_desc">نمونه‌های بیشتر با توضیحات مختصر</p>
+      </div>
 
-      <!-- Project Card -->
-      <article class="project-card">
-        <div class="slider" data-slider>
-          <img src="img/project-2.jpg" alt="project" class="active" />
-          <img src="img/project-2b.jpg" alt="project" />
-          <img src="img/project-2c.jpg" alt="project" />
-          <button class="nav prev"><i class="ri-arrow-right-s-line"></i></button>
-          <button class="nav next"><i class="ri-arrow-left-s-line"></i></button>
-        </div>
-        <div class="content">
-          <h3>داشبورد تحلیل داده</h3>
-          <p class="muted">تجربه کاربری پیشرفته برای مدیریت داده‌های پیچیده.</p>
-          <div class="tags">
-            <span>Dashboard</span><span>Charts</span><span>UX</span>
-          </div>
-          <div class="links">
-            <a href="#"><i class="ri-global-line"></i> لایو</a>
-            <a href="#"><i class="ri-github-line"></i> سورس</a>
+      <div class="grid-3">
+        <div class="project-card">
+          <div class="project-thumb p1"></div>
+          <div class="project-info">
+            <h3 data-i18n="proj2_title">سیستم تشخیص عیب</h3>
+            <p data-i18n="proj2_desc">یادگیری عمیق برای تشخیص خودکار خطا</p>
           </div>
         </div>
-      </article>
+        <div class="project-card">
+          <div class="project-thumb p2"></div>
+          <div class="project-info">
+            <h3 data-i18n="proj3_title">بینایی ماشین صنعتی</h3>
+            <p data-i18n="proj3_desc">تشخیص کیفیت با پردازش تصویر</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb p3"></div>
+          <div class="project-info">
+            <h3 data-i18n="proj4_title">پلتفرم داده‌محور</h3>
+            <p data-i18n="proj4_desc">تحلیل داده برای بهینه‌سازی خطوط تولید</p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <script src="projects.js"></script>
+  <footer class="footer">
+    <p data-i18n="footer_text">© 2026 تمام حقوق محفوظ است.</p>
+  </footer>
+
+  <script src="assets/js/projects.js"></script>
 </body>
 </html>
