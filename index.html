@@ -1,125 +1,108 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shervin Rastegar Resume </title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Professional Resume | GitHub Pages</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body data-theme="dark">
-  <div class="container">
-    <div class="topbar">
-      <div class="brand">
-        <i class="fa-solid fa-user-astronaut"></i>
-        <span id="brandText">Sherwin Rastegar</span>
-      </div>
-      <div class="controls">
-        <button class="btn" id="langToggle"><i class="fa-solid fa-language"></i> <span id="langBtn">FA</span></button>
-        <button class="btn" id="themeToggle"><i class="fa-solid fa-moon"></i> <span id="themeBtn">Dark</span></button>
-      </div>
-    </div>
+<body>
+  <div class="scroll-progress"><span id="scrollBar"></span></div>
 
-    <div class="hero">
-      <div class="card fade-up">
-        <h1 id="name">John Doe</h1>
-        <p id="about">
-          A creative and detail-oriented software engineer with passion for beautiful UI/UX,
-          scalable systems, and modern web technologies. I build products that are fast, elegant, and delightful.
-        </p>
-        <div class="badges" id="tags">
-          <span class="badge">UI/UX</span>
-          <span class="badge">Front-End</span>
-          <span class="badge">Product Design</span>
-          <span class="badge">JavaScript</span>
-        </div>
-      </div>
-
-      <div class="card profile fade-up">
-        <div class="avatar" id="avatar"></div>
-        <div>
-          <h3 id="role">Senior Front-End Developer</h3>
-          <p id="location">Tehran, Iran</p>
-        </div>
-        <button class="btn"><i class="fa-solid fa-download"></i> Download CV</button>
-      </div>
-    </div>
-
-    <div class="section fade-up">
-      <div class="section-title"><i class="fa-solid fa-rocket"></i> <span id="projectsTitle">Projects</span></div>
-      <div class="grid grid-3">
-        <div class="card project">
-          <h4 id="p1t">Nebula Dashboard</h4>
-          <p id="p1d">Analytics platform with interactive charts and real-time data visualization.</p>
-          <a class="link" href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
-        </div>
-        <div class="card project">
-          <h4 id="p2t">Nova E-Commerce</h4>
-          <p id="p2d">High-converting store with modern UI and fast checkout experience.</p>
-          <a class="link" href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
-        </div>
-        <div class="card project">
-          <h4 id="p3t">Pulse Mobile App</h4>
-          <p id="p3d">A sleek app UI for fitness tracking and healthy habits.</p>
-          <a class="link" href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="section fade-up">
-      <div class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i> <span id="skillsTitle">Skills</span></div>
-      <div class="grid grid-2">
-        <div class="card skill">
-          <div>HTML / CSS</div>
-          <div class="bar"><span style="--val: 92%"></span></div>
-        </div>
-        <div class="card skill">
-          <div>JavaScript / TypeScript</div>
-          <div class="bar"><span style="--val: 88%"></span></div>
-        </div>
-        <div class="card skill">
-          <div>React / Next.js</div>
-          <div class="bar"><span style="--val: 85%"></span></div>
-        </div>
-        <div class="card skill">
-          <div>UI/UX Design</div>
-          <div class="bar"><span style="--val: 80%"></span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section fade-up">
-      <div class="section-title"><i class="fa-solid fa-globe"></i> <span id="langsTitle">Languages</span></div>
-      <div class="lang-list" id="langList">
-        <span class="lang-pill">English — Fluent</span>
-        <span class="lang-pill">Persian — Native</span>
-      </div>
-    </div>
-
-    <div class="section fade-up">
-      <div class="section-title"><i class="fa-solid fa-paper-plane"></i> <span id="contactTitle">Contact</span></div>
-      <div class="grid grid-2">
-        <div class="card contact">
-          <a href="mailto:you@email.com"><i class="fa-solid fa-envelope"></i> you@email.com</a>
-          <a href="tel:+989121234567"><i class="fa-solid fa-phone"></i> +98 912 123 4567</a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
-        </div>
-        <div class="card contact">
-          <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-          <a href="#"><i class="fa-brands fa-dribbble"></i> Dribbble</a>
-          <a href="#"><i class="fa-brands fa-behance"></i> Behance</a>
-          <a href="#"><i class="fa-solid fa-location-dot"></i> Tehran, Iran</a>
-        </div>
-      </div>
-    </div>
+  <div class="bubbles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
   </div>
+
+  <header class="topbar">
+    <div class="brand">YourName</div>
+    <div class="actions">
+      <button id="themeToggle" class="btn ghost">Theme</button>
+      <button id="langToggle" class="btn ghost">FA</button>
+      <a href="projects.html" class="btn primary" id="projectsLink">Projects</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <div class="hero-left">
+        <img src="assets/img/profile.jpg" alt="Profile" class="avatar" />
+        <div class="hero-text">
+          <h1 id="name">Your Name</h1>
+          <p id="title" class="subtitle">Full-Stack Developer</p>
+          <p id="summary" class="summary">
+            Passionate developer with a focus on UI/UX and scalable web apps.
+          </p>
+          <div class="contact">
+            <a href="mailto:you@email.com">you@email.com</a>
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="stat">
+          <span id="expYears">5+</span>
+          <small id="expLabel">Years Experience</small>
+        </div>
+        <div class="stat">
+          <span id="projectsCount">25+</span>
+          <small id="projectsLabel">Projects</small>
+        </div>
+        <div class="stat">
+          <span id="clientsCount">10+</span>
+          <small id="clientsLabel">Clients</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2 id="skillsTitle">Skills</h2>
+        <div class="tags">
+          <span>HTML</span><span>CSS</span><span>JS</span><span>React</span>
+          <span>Node.js</span><span>UI/UX</span><span>Git</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 id="languagesTitle">Languages</h2>
+        <div class="tags">
+          <span>English</span><span>Persian</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 id="experienceTitle">Experience</h2>
+        <div class="timeline">
+          <div class="item">
+            <h3>Senior Developer — Company A</h3>
+            <p>2022 - Present</p>
+          </div>
+          <div class="item">
+            <h3>Frontend Developer — Company B</h3>
+            <p>2019 - 2022</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 id="educationTitle">Education</h2>
+        <div class="timeline">
+          <div class="item">
+            <h3>BSc Computer Science</h3>
+            <p>2015 - 2019</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span id="footerText">© 2026 Your Name. All rights reserved.</span>
+  </footer>
 
   <script src="assets/js/app.js"></script>
 </body>
