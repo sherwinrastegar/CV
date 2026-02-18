@@ -3,11 +3,10 @@ const ctx = canvas.getContext("2d");
 
 let w, h, particles = [];
 let targetPoints = [];
-let mode = "scatter"; // scatter | text
-let scrollState = 0;
+let mode = "scatter";
 
 const TEXT = "Sherwin";
-const PARTICLE_COUNT = 450;
+const PARTICLE_COUNT = 520;
 
 function resize() {
   w = canvas.width = window.innerWidth;
@@ -21,11 +20,11 @@ function createParticles() {
   particles = Array.from({ length: PARTICLE_COUNT }, () => ({
     x: Math.random() * w,
     y: Math.random() * h,
-    vx: (Math.random() - 0.5) * 0.6,
-    vy: (Math.random() - 0.5) * 0.6,
-    r: 2 + Math.random() * 3,
+    vx: (Math.random() - 0.5) * 0.7,
+    vy: (Math.random() - 0.5) * 0.7,
+    r: 2 + Math.random() * 2.5,
     tx: Math.random() * w,
-    ty: Math.random() * h,
+    ty: Math.random() * h
   }));
 }
 
@@ -37,7 +36,7 @@ function buildTextTargets() {
 
   const fontSize = Math.min(w * 0.18, 180);
   tctx.clearRect(0, 0, w, h);
-  tctx.font = `700 ${fontSize}px Inter`;
+  tctx.font = `800 ${fontSize}px Inter`;
   tctx.textAlign = "center";
   tctx.textBaseline = "middle";
   tctx.fillStyle = "white";
@@ -55,7 +54,6 @@ function buildTextTargets() {
     }
   }
 
-  // Map targets to particles
   particles.forEach((p, i) => {
     const t = targetPoints[i % targetPoints.length];
     p.tx = t.x;
@@ -68,11 +66,9 @@ function update() {
 
   particles.forEach((p) => {
     if (mode === "text") {
-      // move toward text position
-      p.x += (p.tx - p.x) * 0.07;
-      p.y += (p.ty - p.y) * 0.07;
+      p.x += (p.tx - p.x) * 0.08;
+      p.y += (p.ty - p.y) * 0.08;
     } else {
-      // scatter
       p.x += p.vx;
       p.y += p.vy;
 
@@ -81,7 +77,7 @@ function update() {
     }
 
     ctx.beginPath();
-    ctx.fillStyle = "rgba(100,255,218,0.7)";
+    ctx.fillStyle = "rgba(0,229,255,0.7)";
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
     ctx.fill();
   });
@@ -95,12 +91,9 @@ function handleScroll() {
   const scrollHeight = doc.scrollHeight - doc.clientHeight;
   const progress = (scrollTop / scrollHeight) * 100;
 
-  // Progress Bar
   document.getElementById("scroll-progress").style.width = `${progress}%`;
 
-  // Change Mode by Scroll Range
-  // 25% تا 65% => تشکیل متن
-  if (progress > 25 && progress < 65) {
+  if (progress > 20 && progress < 60) {
     mode = "text";
   } else {
     mode = "scatter";
@@ -108,6 +101,15 @@ function handleScroll() {
 }
 
 window.addEventListener("scroll", handleScroll);
+
+// Theme Toggle
+const themeToggle = document.getElementById("theme-toggle");
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const body = document.body;
+    body.setAttribute("data-theme", body.getAttribute("data-theme") === "light" ? "dark" : "light");
+  });
+}
 
 resize();
 update();
