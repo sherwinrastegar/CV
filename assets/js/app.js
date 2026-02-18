@@ -1,90 +1,113 @@
-const dictionary = {
-  en: {
-    name: "Your Name",
-    title: "Full-Stack Developer",
-    summary: "Passionate developer with a focus on UI/UX and scalable web apps.",
-    skillsTitle: "Skills",
-    languagesTitle: "Languages",
-    experienceTitle: "Experience",
-    educationTitle: "Education",
-    expLabel: "Years Experience",
-    projectsLabel: "Projects",
-    clientsLabel: "Clients",
-    footerText: "© 2026 Your Name. All rights reserved.",
-    projectsLink: "Projects"
-  },
-  fa: {
-    name: "نام شما",
-    title: "توسعه‌دهنده فول‌استک",
-    summary: "توسعه‌دهنده‌ای علاقه‌مند به UI/UX و ساخت نرم‌افزارهای مقیاس‌پذیر.",
-    skillsTitle: "مهارت‌ها",
-    languagesTitle: "زبان‌ها",
-    experienceTitle: "سوابق کاری",
-    educationTitle: "تحصیلات",
-    expLabel: "سال تجربه",
-    projectsLabel: "پروژه‌ها",
-    clientsLabel: "مشتری‌ها",
-    footerText: "© 2026 نام شما. تمامی حقوق محفوظ است.",
-    projectsLink: "پروژه‌ها"
-  }
-};
+const canvas = document.getElementById("bubble-canvas");
+const ctx = canvas.getContext("2d");
 
-const themeToggle = document.getElementById("themeToggle");
-const langToggle = document.getElementById("langToggle");
+let w, h, particles = [];
+let targetPoints = [];
+let mode = "scatter"; // scatter | text
+let scrollState = 0;
 
-function setTheme(theme){
-  if(theme === "light"){
-    document.body.classList.add("light");
-  }else{
-    document.body.classList.remove("light");
-  }
-  localStorage.setItem("theme", theme);
+const TEXT = "Sherwin";
+const PARTICLE_COUNT = 450;
+
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+  createParticles();
+  buildTextTargets();
+}
+window.addEventListener("resize", resize);
+
+function createParticles() {
+  particles = Array.from({ length: PARTICLE_COUNT }, () => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    vx: (Math.random() - 0.5) * 0.6,
+    vy: (Math.random() - 0.5) * 0.6,
+    r: 2 + Math.random() * 3,
+    tx: Math.random() * w,
+    ty: Math.random() * h,
+  }));
 }
 
-function setLanguage(lang){
-  const data = dictionary[lang];
-  document.getElementById("name").textContent = data.name;
-  document.getElementById("title").textContent = data.title;
-  document.getElementById("summary").textContent = data.summary;
-  document.getElementById("skillsTitle").textContent = data.skillsTitle;
-  document.getElementById("languagesTitle").textContent = data.languagesTitle;
-  document.getElementById("experienceTitle").textContent = data.experienceTitle;
-  document.getElementById("educationTitle").textContent = data.educationTitle;
-  document.getElementById("expLabel").textContent = data.expLabel;
-  document.getElementById("projectsLabel").textContent = data.projectsLabel;
-  document.getElementById("clientsLabel").textContent = data.clientsLabel;
-  document.getElementById("footerText").textContent = data.footerText;
-  document.getElementById("projectsLink").textContent = data.projectsLink;
+function buildTextTargets() {
+  const temp = document.createElement("canvas");
+  const tctx = temp.getContext("2d");
+  temp.width = w;
+  temp.height = h;
 
-  if(lang === "fa"){
-    document.body.classList.add("rtl");
-    langToggle.textContent = "EN";
-  }else{
-    document.body.classList.remove("rtl");
-    langToggle.textContent = "FA";
+  const fontSize = Math.min(w * 0.18, 180);
+  tctx.clearRect(0, 0, w, h);
+  tctx.font = `700 ${fontSize}px Inter`;
+  tctx.textAlign = "center";
+  tctx.textBaseline = "middle";
+  tctx.fillStyle = "white";
+  tctx.fillText(TEXT, w / 2, h / 2);
+
+  const imageData = tctx.getImageData(0, 0, w, h).data;
+  targetPoints = [];
+
+  for (let y = 0; y < h; y += 6) {
+    for (let x = 0; x < w; x += 6) {
+      const idx = (y * w + x) * 4;
+      if (imageData[idx + 3] > 128) {
+        targetPoints.push({ x, y });
+      }
+    }
   }
-  localStorage.setItem("lang", lang);
+
+  // Map targets to particles
+  particles.forEach((p, i) => {
+    const t = targetPoints[i % targetPoints.length];
+    p.tx = t.x;
+    p.ty = t.y;
+  });
 }
 
-themeToggle.addEventListener("click", () => {
-  const current = localStorage.getItem("theme") || "dark";
-  setTheme(current === "dark" ? "light" : "dark");
-});
+function update() {
+  ctx.clearRect(0, 0, w, h);
 
-langToggle.addEventListener("click", () => {
-  const current = localStorage.getItem("lang") || "en";
-  setLanguage(current === "en" ? "fa" : "en");
-});
+  particles.forEach((p) => {
+    if (mode === "text") {
+      // move toward text position
+      p.x += (p.tx - p.x) * 0.07;
+      p.y += (p.ty - p.y) * 0.07;
+    } else {
+      // scatter
+      p.x += p.vx;
+      p.y += p.vy;
 
-const storedTheme = localStorage.getItem("theme") || "dark";
-const storedLang = localStorage.getItem("lang") || "en";
-setTheme(storedTheme);
-setLanguage(storedLang);
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+    }
 
-const scrollBar = document.getElementById("scrollBar");
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-  scrollBar.style.width = percent + "%";
-});
+    ctx.beginPath();
+    ctx.fillStyle = "rgba(100,255,218,0.7)";
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(update);
+}
+
+function handleScroll() {
+  const doc = document.documentElement;
+  const scrollTop = doc.scrollTop || document.body.scrollTop;
+  const scrollHeight = doc.scrollHeight - doc.clientHeight;
+  const progress = (scrollTop / scrollHeight) * 100;
+
+  // Progress Bar
+  document.getElementById("scroll-progress").style.width = `${progress}%`;
+
+  // Change Mode by Scroll Range
+  // 25% تا 65% => تشکیل متن
+  if (progress > 25 && progress < 65) {
+    mode = "text";
+  } else {
+    mode = "scatter";
+  }
+}
+
+window.addEventListener("scroll", handleScroll);
+
+resize();
+update();
