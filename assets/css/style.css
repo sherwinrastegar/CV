@@ -494,36 +494,23 @@ textarea{ min-height: 90px; resize: vertical; }
     justify-content: center;
   }
 }
-/* Footer Copyright */
+/* Footer Copyright - Center */
+.site-footer{
+  margin-top: 24px;
+  padding: 16px 0 24px;
+}
+
 .footer-copyright{
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
   font-size: 14px;
   line-height: 1.6;
   opacity: 0.9;
 }
 
-.footer-copyright .cr{
-  white-space: nowrap;
-}
-
 .footer-copyright .credit{
   display: inline-block;
-  margin-inline-start: 8px;
+  margin-left: 8px;
   opacity: 0.85;
   font-size: 13px;
-}
-
-/* Responsive */
-@media (max-width: 600px){
-  .footer-copyright{
-    flex-direction: column;
-    text-align: center;
-  }
-  .footer-copyright .cr{
-    white-space: normal;
-  }
 }
