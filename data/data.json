@@ -51,12 +51,12 @@
     },
     "orbit": {
       "title": {
-        "en": "Cognitive Mechatronics",
-        "fa": "مکاترونیک شناختی"
+        "en": "Always evolving",
+        "fa": "همیشه در حال پیشرفت "
       },
       "desc": {
-        "en": "Integrating control, perception, and intelligence into high-performance systems.",
-        "fa": "ادغام کنترل، ادراک و هوش در سیستم‌های پرقدرت."
+        "en": "As long as you are breathing, there is no reason to stop. Continuing toward your goal is always a living choice.\n\n",
+        "fa": "ا وقتی نفس هست، توقف معنا ندارد؛ هدف هنوز زنده است."
       }
     }
   },
@@ -156,6 +156,13 @@
         "fa": "طراحی سالیدورک"
       },
       "level": "90%"
+    },
+    {
+      "name": {
+        "en": "Python",
+        "fa": "پایتون "
+      },
+      "level": "100%"
     }
   ],
   "education": [
@@ -222,15 +229,15 @@
   ],
   "languages": [
     {
-      "name": "English (IELTS 6.5)",
-      "score": "6"
-    },
-    {
       "name": "Persian (Native)",
       "score": "10"
     },
     {
-      "name": "German (A2)",
+      "name": "English (IELTS 6.5)",
+      "score": "6"
+    },
+    {
+      "name": "German (Beginner)",
       "score": "5"
     }
   ],
@@ -338,7 +345,7 @@
   ],
   "contact": {
     "email": "shervin85rastegar@gmail.com",
-    "phone": "+98 933 610 9098",
+    "phone": "Message me to receive.",
     "location": "Esfahan , Iran",
     "telegram": "https://t.me/Sherwin_Rastegar",
     "instagram": "https://instagram.com/Sherwin_Rastegar",
