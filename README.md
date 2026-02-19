@@ -1,4 +1,4 @@
-# Shervin Rastegar — Personal Portfolio (EN/FA)
+# Shervin Rastegar — Personal Resume (EN/FA)
 
 **Creator:** Shervin Rastegar  
 **Role:** AI & Mechatronics Engineer  
