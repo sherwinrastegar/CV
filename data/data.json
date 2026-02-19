@@ -1,7 +1,7 @@
 {
   "meta": {
     "siteTitle": {
-      "en": "Shervin Rastegar | Resume",
+      "en": "Shervin Rastegar | resume",
       "fa": "شروین رستگار | رزومه"
     },
     "theme": {
@@ -12,8 +12,8 @@
   },
   "brand": {
     "name": {
-      "en": "Shervin Rastegar",
-      "fa": "شروین رستگار"
+      "en": "Win Cv",
+      "fa": "رزومه ی برنده"
     },
     "logo": "assets/media/logo.png"
   },
@@ -23,8 +23,8 @@
       "fa": "شروین رستگار"
     },
     "subtitle": {
-      "en": "Mechatronics Engineer | Deep Learning Researcher | Product Innovator",
-      "fa": "مهندس مکاترونیک | پژوهشگر دیپ‌لرنینگ | نوآور محصول"
+      "en": "Mechatronics Engineer | Deep Learning Expert | Ready to Fly",
+      "fa": "مهندس مکاترونیک | متخصص دیپ‌لرنینگ | آماده ی پیشرفت"
     },
     "badges": [
       "Mechatronics",
@@ -43,8 +43,8 @@
       },
       "secondary": {
         "label": {
-          "en": "View Projects",
-          "fa": "مشاهده پروژه‌ها"
+          "en": "Projects",
+          "fa": " پروژه‌ها"
         },
         "link": "projects.html"
       }
@@ -61,7 +61,7 @@
     }
   },
   "profile": {
-    "avatar": "assets/media/avatar.jpg",
+    "avatar": "assets/media/photo18721342355.jpg",
     "role": {
       "en": "AI & Mechatronics Engineer",
       "fa": "مهندس مکاترونیک و هوش مصنوعی"
@@ -104,7 +104,7 @@
     {
       "name": {
         "en": "Deep Learning",
-        "fa": "دیپ‌لرنینگ"
+        "fa": "دیپ‌ لرنینگ"
       },
       "level": "92%"
     },
@@ -113,35 +113,42 @@
         "en": "Computer Vision",
         "fa": "بینایی ماشین"
       },
-      "level": "90%"
+      "level": "80%"
     },
     {
       "name": {
         "en": "Control Systems",
         "fa": "سیستم‌های کنترل"
       },
-      "level": "86%"
+      "level": "90%"
     },
     {
       "name": {
         "en": "Embedded Systems",
         "fa": "سیستم‌های امبدد"
       },
-      "level": "82%"
+      "level": "70%"
     },
     {
       "name": {
         "en": "Robotics",
         "fa": "رباتیک"
       },
-      "level": "88%"
+      "level": "95%"
     },
     {
       "name": {
         "en": "Signal Processing",
         "fa": "پردازش سیگنال"
       },
-      "level": "80%"
+      "level": "100%"
+    },
+    {
+      "name": {
+        "en": "Solidwork ",
+        "fa": "طراحی سالیدورک"
+      },
+      "level": "90%"
     }
   ],
   "education": [
@@ -162,32 +169,47 @@
     },
     {
       "title": {
-        "en": "BSc in Mechanical Engineering",
-        "fa": "کارشناسی مهندسی مکانیک"
+        "en": "BSc in Mechatronics Engineering",
+        "fa": "کارشناسی مهندسی مکاترونیک"
       },
       "place": {
-        "en": "University of Y",
-        "fa": "دانشگاه Y"
+        "en": "University of Esfahan",
+        "fa": "دانشگاه ملی مهات اصفهان"
       },
-      "period": "2016-2020",
+      "period": "2023-2025",
       "desc": {
         "en": "Specialization in automation systems.",
         "fa": "گرایش سیستم‌های اتوماسیون."
+      }
+    },
+    {
+      "title": {
+        "en": "Vocational Technical Diploma",
+        "fa": "دیپلم فنی حرفه ای "
+      },
+      "place": {
+        "en": "Enghlab High School",
+        "fa": "هنرستان انقلاب اسلامی"
+      },
+      "period": "2019-2022",
+      "desc": {
+        "en": "Mechatronics",
+        "fa": "مکاترونیک"
       }
     }
   ],
   "languages": [
     {
       "name": "English (IELTS 7.5)",
-      "score": ""
+      "score": "8"
     },
     {
       "name": "Persian (Native)",
-      "score": ""
+      "score": "10"
     },
     {
       "name": "German (A2)",
-      "score": ""
+      "score": "4"
     }
   ],
   "articles": [
@@ -293,14 +315,14 @@
     }
   ],
   "contact": {
-    "email": "shervin@email.com",
-    "phone": "+98 912 000 0000",
-    "location": "Tehran, Iran",
-    "telegram": "https://t.me/yourid",
-    "instagram": "https://instagram.com/yourid",
-    "linkedin": "https://linkedin.com/in/yourid",
-    "github": "https://github.com/yourid",
-    "website": "https://yourdomain.com"
+    "email": "shervin85rastegar@gmail.com",
+    "phone": "+98 933 610 9098",
+    "location": "Esfahan , Iran",
+    "telegram": "https://t.me/Sherwin_Rastegar",
+    "instagram": "https://instagram.com/Sherwin_Rastegar",
+    "linkedin": "https://linkedin.com/in/Shervin-Rastegar",
+    "github": "https://github.com/SherwinRastegar",
+    "website": "https://sherwinrastegar.github.io/CV"
   },
   "ui": {
     "nav": {
